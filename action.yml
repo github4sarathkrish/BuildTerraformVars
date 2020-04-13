@@ -1,0 +1,15 @@
+name: 'Build Terraform Vars'
+description: 'Build Terraform variable json'
+inputs:
+  input-json:  # id of input
+    description: 'variable json'
+    required: true
+  workspaceid:
+    description: 'Terraform workspace id'
+    required: true
+outputs:
+  output-json: # id of output
+    description: 'Json to send to API'
+runs:
+  using: 'node12'
+  main: 'index.js'
