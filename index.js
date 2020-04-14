@@ -7,7 +7,7 @@ try {
   var workSpaceId = core.getInput('workspaceid');
   console.log(`Input ${inputJson}`);
   var outJson = {};
-  outJson.data=inputJson;
+  outJson.data=$JSON.parse(inputJson);
   outJson.relationships = {};
   outJson.relationships.workspace={};
   outJson.relationships.workspace.data = {};
@@ -15,7 +15,7 @@ try {
   outJson.relationships.workspace.data.type = "workspaces"
   core.setOutput("output-json", JSON.stringify(outJson));
   const out = JSON.stringify(outJson);
-  console.log(`Out Json: ${out}`);
+  console.log(`Out: ${out}`);
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
