@@ -6,7 +6,7 @@ try {
   var inputJson = core.getInput('input-json');
   var workSpaceId = core.getInput('workspaceid');
   console.log(`Input ${inputJson}`);
-  console.log(`workspaceid ${workspaceid}`);
+  console.log(`workSpaceId ${workSpaceId}`);
   var outJson = {};
   outJson.data=JSON.parse(inputJson);
   outJson.relationships = {};
